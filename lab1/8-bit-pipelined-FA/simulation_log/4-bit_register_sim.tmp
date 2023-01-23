@@ -1,0 +1,41 @@
+TOOL:	ncxlmode	15.20-s083: Started on Jan 22, 2023 at 19:48:19 CST
+ncxlmode
+	+delay_mode_path
+	+typdelays
+	-l
+	simout.tmp
+	/home/grads/h/haiminghsu/cadence/lab1/4bit_register_run1/testfixture.template
+	-f /home/grads/h/haiminghsu/cadence/lab1/4bit_register_run1/verilog.inpfiles
+		/opt/coe/ncsu/ncsu-cdk-1.6.0.beta/lib/NCSU_Digital_Parts/inv/functional/verilog.v
+		/opt/coe/ncsu/ncsu-cdk-1.6.0.beta/lib/NCSU_Digital_Parts/Dlatch/behavioral/verilog.v
+		ihnl/cds0/netlist
+		ihnl/cds1/netlist
+	+nostdout
+	+nocopyright
+	+ncvlogargs+" -neverwarn -nostdout -nocopyright "
+	+ncelabargs+" -neg_tchk  -nonotifier  -sdf_NOCheck_celltype  -access +r  -pulse_e 100  -pulse_r 100  -neverwarn  -timescale 1ns/1ns -nostdout -nocopyright"
+	+ncsimargs+" -neverwarn  -nocopyright -gui -input /home/grads/h/haiminghsu/cadence/lab1/4bit_register_run1/.simTmpNCCmd "
+	+mpssession+virtuoso36429
+	+mpshost+hera3.ece.tamu.edu
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
+ncsim> source /opt/coe/cadence/INCISIVE152/tools/inca/files/ncsimrc
+ncsim> database -open shmWave -shm -default -into shm.db
+Created default SHM database shmWave
+ncsim> probe -create -shm test  -all   -depth 1
+Created probe 1
+ncsim> run
+                   0 D=0000, Q=xxxx
+                  10 D=0000, Q=0000
+                  20 D=1111, Q=0000
+                  30 D=1111, Q=1111
+                  40 D=1010, Q=1111
+                  50 D=1010, Q=1010
+                  60 D=0101, Q=1010
+                  70 D=0101, Q=0101
+Simulation interrupted at 104713410 NS + 0
+ncsim> ^C
+ncsim> exit
+TOOL:	ncxlmode	15.20-s083: Exiting on Jan 22, 2023 at 19:51:30 CST  (total: 00:03:11)

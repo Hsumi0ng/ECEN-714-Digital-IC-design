@@ -1,0 +1,50 @@
+TOOL:	ncxlmode	15.20-s083: Started on Jan 23, 2023 at 13:25:51 CST
+ncxlmode
+	+delay_mode_path
+	+typdelays
+	-l
+	simout.tmp
+	/home/grads/h/haiminghsu/cadence/lab1/8bit_pipelined_adder_run1/testfixture.template
+	-f /home/grads/h/haiminghsu/cadence/lab1/8bit_pipelined_adder_run1/verilog.inpfiles
+		/opt/coe/ncsu/ncsu-cdk-1.6.0.beta/lib/NCSU_Digital_Parts/xor2/functional/verilog.v
+		/opt/coe/ncsu/ncsu-cdk-1.6.0.beta/lib/NCSU_Digital_Parts/nand2/functional/verilog.v
+		/opt/coe/ncsu/ncsu-cdk-1.6.0.beta/lib/NCSU_Digital_Parts/inv/functional/verilog.v
+		/opt/coe/ncsu/ncsu-cdk-1.6.0.beta/lib/NCSU_Digital_Parts/Dlatch/behavioral/verilog.v
+		ihnl/cds0/netlist
+		ihnl/cds1/netlist
+		ihnl/cds2/netlist
+		ihnl/cds3/netlist
+		ihnl/cds4/netlist
+	+nostdout
+	+nocopyright
+	+ncvlogargs+" -neverwarn -nostdout -nocopyright "
+	+ncelabargs+" -neg_tchk  -nonotifier  -sdf_NOCheck_celltype  -access +r  -pulse_e 100  -pulse_r 100  -neverwarn  -timescale 1ns/1ns -nostdout -nocopyright"
+	+ncsimargs+" -neverwarn  -nocopyright -gui -input /home/grads/h/haiminghsu/cadence/lab1/8bit_pipelined_adder_run1/.simTmpNCCmd "
+	+mpssession+virtuoso27811
+	+mpshost+hera3.ece.tamu.edu
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
+ncsim> source /opt/coe/cadence/INCISIVE152/tools/inca/files/ncsimrc
+ncsim> database -open shmWave -shm -default -into shm.db
+Created default SHM database shmWave
+ncsim> probe -create -shm test  -all   -depth 1
+Created probe 1
+ncsim> run
+                   0 X=00000000, Y=00000000, Cin=0, SUM=xxxxxxxx, COUT=x
+                  10 X=00000000, Y=00000000, Cin=0, SUM=00000000, COUT=0
+                  20 X=01111110, Y=01100111, Cin=0, SUM=00000000, COUT=0
+                  30 X=01111110, Y=01100111, Cin=0, SUM=11100101, COUT=0
+                  40 X=01111111, Y=00000000, Cin=1, SUM=11100101, COUT=0
+                  50 X=01111111, Y=00000000, Cin=1, SUM=10000000, COUT=0
+                  60 X=00101010, Y=01010101, Cin=0, SUM=10000000, COUT=0
+                  70 X=00101010, Y=01010101, Cin=0, SUM=01111111, COUT=0
+                  80 X=00101010, Y=01010101, Cin=1, SUM=01111111, COUT=0
+                  90 X=00101010, Y=01010101, Cin=1, SUM=10000000, COUT=0
+                 100 X=01001100, Y=00110011, Cin=0, SUM=10000000, COUT=0
+                 110 X=01001100, Y=00110011, Cin=0, SUM=01111111, COUT=0
+                 120 X=01001100, Y=00110011, Cin=1, SUM=01111111, COUT=0
+                 130 X=01001100, Y=00110011, Cin=1, SUM=10000000, COUT=0
+Simulation interrupted at 195253770 NS + 0
+ncsim> 
