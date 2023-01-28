@@ -1,0 +1,13 @@
+1 schematic wire pin  ratio
+2 symbol
+3 layout              
+		1. edit spacing major 0.5 minor 0.1
+		2. place device  modify ratio, multiplier     height
+		3. place m1_n m1_p contact(set columns) to connect source to substrate
+		4. round nwell
+		5. round VDD & GND
+		6. inter-connect input( place a m_poly contact ), output 
+		7. add pin  round the metal 
+		8. DRC anid correct
+		9. Extraction
+		10. LVS  check and correct
